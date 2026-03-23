@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+<!-- Meta Tags -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<meta name="description" content="Yoga | Health Beauty & Yoga Responsive HTML5 Template" />
+<meta name="keywords" content="care, clinic, corporate, dental, dentist, doctor" />
+
+<!-- Page Title -->
+<title>Shivoham Shiv</title>
+
+<?php include ('inc/meta.php')?>
+
+</head>
+
+<body class="has-side-panel side-panel-right fullwidth-page">
+<div id="wrapper">
+   
+	<!-- Header -->
+	<?php include ('inc/header.php')?>
+  
+	  
+  <!-- Start main-content -->
+  <div class="main-content"> 
+    <!-- Section: home -->
+    <?php include ('inc/slider.php')?>
+
+    <!-- Section: About -->
+    <section>
+      <div class="container">
+        <div class="section-title text-center">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <h2 class=" line-bottom-double-line-centered mt-0">Welcome to <span class="text-theme-colored">Shivoham</span>Shiv</h2>
+              <p>Explore The Timeless Knowledge Of Vedas</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-content text-center">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3 mb-sm-40 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
+              <img class="img-circle img-thumbnail mb-15" src="images/spa/about/sq1.jpg" alt="">
+              <h3 class="mb-5">Facial Spa</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero omnis unde nesciunt?</p>
+              <a href="#" class="btn btn-theme-colored">Read more</a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 mb-sm-40 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.4s">
+              <img class="img-circle img-thumbnail mb-15" src="images/spa/about/sq2.jpg" alt="">
+              <h3 class="mb-5">Herbal Spa</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero omnis unde nesciunt?</p>
+              <a href="#" class="btn btn-theme-colored">Read more</a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 mb-sm-40 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+              <img class="img-circle img-thumbnail mb-15" src="images/spa/about/sq3.jpg" alt="">
+              <h3 class="mb-5">Stone Massage</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero omnis unde nesciunt?</p>
+              <a href="#" class="btn btn-theme-colored">Read more</a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 mb-sm-0 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.6s">
+              <img class="img-circle img-thumbnail mb-15" src="images/spa/about/sq4.jpg" alt="">
+              <h3 class="mb-5">Aromatherapy Massage</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero omnis unde nesciunt?</p>
+              <a href="#" class="btn btn-theme-colored">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: events  -->
+    <section class="divider parallax" data-bg-img="images/spa/bg/bg5.jpg">
+      <div class="container">
+        <div class="section-title text-center">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-3">
+              <h2 class="mt-0 text-black">Upcoming <span class="text-theme-colored2"> Event</span></h2>
+            </div>
+          </div>
+        </div>
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-6">
+              <div class="upcoming-event p-30 mb-30 bg-theme-colored2-transparent-9">
+                <div class="event-thumb pull-right flip sm-pull-none"><img class="" alt="" src="images/spa/event/sq1.jpg"></div>
+                <div class="event-content">
+                  <h3 class="mt-0"><a href="page-event-single.html" class="text-white">Spa for Real Beauty</a></h3>
+                  <ul class="mb-5 text-white">
+                    <li><i class="fa fa-calendar-plus-o mr-10"></i>June 26, 2019</li>
+                    <li><i class="fa fa-clock-o mr-10"></i>9:00 AM - 5:00 PM</li>
+                    <li><i class="fa fa-globe mr-10"></i>New York</li>
+                  </ul>
+                  <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas eveniet, nemo dicta. Ullam nam.</p>
+                  <a class="text-white" href="page-event-single.html">Read More →</a>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="upcoming-event p-30 mb-30 bg-theme-colored-transparent-9">
+                <div class="event-thumb pull-right flip sm-pull-none"><img class="" alt="" src="images/spa/event/sq2.jpg"></div>
+                <div class="event-content text-white">
+                  <h3 class="mt-0 text-white"><a href="page-event-single.html" class="text-white">Astro Crystal Therapy</a></h3>
+                  <ul class="mb-5 text-white">
+                    <li><i class="fa fa-calendar-plus-o mr-10"></i>June 26, 2019</li>
+                    <li><i class="fa fa-clock-o mr-10"></i>9:00 AM - 5:00 PM</li>
+                    <li><i class="fa fa-globe mr-10"></i>New York</li>
+                  </ul>
+                  <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas eveniet, nemo dicta. Ullam nam.</p>
+                  <a class="text-white" href="page-event-single.html">Read More →</a>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: BENEFITS -->
+    <section data-bg-color="#E3E3E1">
+      <div class="container">
+        <div class="section-title text-center">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <h2 class="text-uppercase line-bottom-double-line-centered mt-0"> Why <span class="text-theme-colored">Choose Us </span></h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="icon-box icon-theme-colored benefit-icon tmedia text-right p-0 mb-sm-10 mt-30">
+                <a href="#" class="icon icon-circled icon-md border-1px border-theme-colored pull-right flip ml-30 pl-0">
+                <i class="flaticon-spa-candles font-36 text-white"></i></a>
+                <div class="media-body">
+                  <h4 class="media-heading heading">Aroma Therapy</h4>
+                  <p>Ecoforestry is a creative skill and a joy beyond anything found within conventional forestry</p>
+                </div>
+              </div>
+              <div class="icon-box icon-theme-colored benefit-icon media text-right p-0 mb-sm-10 mt-30">
+                <a href="#" class="icon icon-circled icon-md border-1px border-theme-colored pull-right flip ml-30 pl-0">
+                <i class="flaticon-spa-face-mask font-36 text-white"></i></a>
+                <div class="media-body">
+                  <h4 class="media-heading heading">Fairness & Beauty</h4>
+                  <p>Ecoforestry is a creative skill and a joy beyond anything found within conventional forestry</p>
+                </div>
+              </div>
+              <div class="icon-box icon-theme-colored benefit-icon media text-right p-0 mb-sm-10 mt-30">
+                <a href="#" class="icon icon-circled icon-md border-1px border-theme-colored pull-right flip ml-30 pl-0">
+                <i class="flaticon-spa-flower-therapy font-36 text-white"></i></a>
+                <div class="media-body">
+                  <h4 class="media-heading heading">Ayurvedic Spa</h4>
+                  <p>Ecoforestry is a creative skill and a joy beyond anything found within conventional forestry</p>
+                </div>
+              </div>
+              <div class="icon-box icon-theme-colored benefit-icon media text-right p-0 mb-sm-10 mt-30">
+                <a href="#" class="icon icon-circled icon-md border-1px border-theme-colored pull-right flip ml-30 pl-0">
+                <i class="flaticon-spa-hot-stones font-36 text-white"></i></a>
+                <div class="media-body">
+                  <h4 class="media-heading heading">Massage Rituals </h4>
+                  <p>Ecoforestry is a creative skill and a joy beyond anything found within conventional forestry</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <img src="images/spa/benefits/1.jpg" alt="">
+            </div>
+            <div class="col-md-4">
+              <div class="icon-box icon-theme-colored benefit-icon left media p-0 mb-sm-10 mt-30">
+                <a href="#" class="icon icon-circled icon-md border-1px border-theme-colored pull-left flip">
+                <i class="flaticon-spa-bamboo font-36 text-white"></i></a>
+                <div class="media-body">
+                  <h4 class="media-heading heading">Bamboo Massage</h4>
+                  <p>Ecoforestry is a creative skill and a joy beyond anything found within conventional forestry</p>
+                </div>
+              </div>
+              <div class="icon-box icon-theme-colored benefit-icon left media p-0 mb-sm-10 mt-30">
+                <a href="#" class="icon icon-circled icon-md border-1px border-theme-colored pull-left flip">
+                <i class="flaticon-spa-hairbrush font-36 text-white"></i></a>
+                <div class="media-body">
+                  <h4 class="media-heading heading">Hair Extension</h4>
+                  <p>Ecoforestry is a creative skill and a joy beyond anything found within conventional forestry</p>
+                </div>
+              </div>
+              <div class="icon-box icon-theme-colored benefit-icon left media p-0 mb-sm-10 mt-30">
+                <a href="#" class="icon icon-circled icon-md border-1px border-theme-colored pull-left flip">
+                <i class="flaticon-spa-massage font-36 text-white"></i></a>
+                <div class="media-body">
+                  <h4 class="media-heading heading">Oil Massage </h4>
+                  <p>Ecoforestry is a creative skill and a joy beyond anything found within conventional forestry</p>
+                </div>
+              </div>
+              <div class="icon-box icon-theme-colored benefit-icon left media p-0 mb-sm-10 mt-30">
+                <a href="#" class="icon icon-circled icon-md border-1px border-theme-colored pull-left flip">
+                <i class="flaticon-spa-woman-with-flower font-46 text-white"></i></a>
+                <div class="media-body">
+                  <h4 class="media-heading heading">Fairness Treatment</h4>
+                  <p>Ecoforestry is a creative skill and a joy beyond anything found within conventional forestry</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: opening -->
+    <section class="divider parallax" data-bg-img="images/spa/bg/bg7.jpg">
+      <div class="container pt-0 pb-0">
+        <div class="row">
+          <div class="col-md-6 bg-theme-colored-transparent-8">
+            <div class="opening-hours pr-30 pl-30 pt-70 pb-70">
+              <h3 class="text-uppercase text-white">Opening Hours</h3>
+              <ul class="list-unstyled text-white font-15">
+                <li class="clearfix"> <span> Monday – Friday</span>
+                  <div class="value pull-right"> 9.00 - 20.00 </div>
+                </li>
+                <li class="clearfix"> <span> Saturday </span>
+                  <div class="value pull-right"> 10.00 - 16.00 </div>
+                </li>
+                <li class="clearfix"> <span> Sunday </span>
+                  <div class="value pull-right"> 9.30 - 18.00 </div>
+                </li>
+                <li class="clearfix"> <span>Emergency Services</span>
+                  <div class="value pull-right">24 hours Open</div>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-theme-colored2 mt-30">Contact us</a> </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Servises -->
+    <section>
+      <div class="container pb-20">
+        <div class="section-title text-center">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <h2 class="mt-0">Our <span class="text-theme-colored">Servises</span></h2>
+              <div class="title-icon">
+                <img class="mb-10" src="images/title-icon.png" alt="">
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-content">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
+              <div class="box-hover-effect thumb-cross-effect">
+                <div class="effect-wrapper">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="images/spa/services/1.jpg" alt="project">
+                  </div>
+                  <div class="text-holder text-holder-top-left">
+                    <div class="title text-theme-colored font-22">
+                      $70
+                    </div>
+                  </div>
+                  <div class="text-holder text-holder-top-right">
+                    <div class="title text-theme-colored font-22">
+                      <i class="fa fa-clock-o mr-5"></i> 9:00 AM - 5:00 PM
+                    </div>
+                  </div>
+                  <a class="hover-link" data-lightbox-gallery="gallery1-link" href="https://placehold.it/280x380">View more</a>
+                </div>
+                <h3><a href="page-department-details.html">Stone Massage</a></h3>
+                <ul class="list-inline mb-10">
+                  <li>25 Days</li>
+                  <li>|</li>
+                  <li>20 Classes</li>
+                  <li>|</li>
+                  <li>June 26, 2016</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit voluptatem obcaecati</p>
+                <ul class="mb-5 font-16">
+                  <li></li>
+                </ul>
+                <a href="#" class="btn btn-dark btn-theme-colored">Register Now</a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
+              <div class="box-hover-effect thumb-cross-effect">
+                <div class="effect-wrapper">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="images/spa/services/2.jpg" alt="project">
+                  </div>
+                  <div class="text-holder text-holder-top-left">
+                    <div class="title text-theme-colored font-22">
+                      $68
+                    </div>
+                  </div>
+                  <div class="text-holder text-holder-top-right">
+                    <div class="title text-theme-colored font-22">
+                      <i class="fa fa-clock-o mr-5"></i> 9:00 AM - 5:00 PM
+                    </div>
+                  </div>
+                  <a class="hover-link" data-lightbox-gallery="gallery1-link" href="https://placehold.it/280x380">View more</a>
+                </div>
+                <h3><a href="page-department-details.html">Body Scrub</a></h3>
+                <ul class="list-inline mb-10">
+                  <li>25 Days</li>
+                  <li>|</li>
+                  <li>20 Classes</li>
+                  <li>|</li>
+                  <li>June 26, 2016</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit voluptatem obcaecati</p>
+                <a href="#" class="btn btn-dark btn-theme-colored">Register Now</a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
+              <div class="box-hover-effect thumb-cross-effect">
+                <div class="effect-wrapper">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="images/spa/services/3.jpg" alt="project">
+                  </div>
+                  <div class="text-holder text-holder-top-left">
+                    <div class="title text-theme-colored font-22">
+                      <i class="fa fa-dolar-o mr-10">$85</i>
+                    </div>
+                  </div>
+                  <div class="text-holder text-holder-top-right">
+                    <div class="title text-theme-colored font-22">
+                      <i class="fa fa-clock-o mr-5"></i> 9:00 AM - 5:00 PM
+                    </div>
+                  </div>
+                  <a class="hover-link" data-lightbox-gallery="gallery1-link" href="https://placehold.it/280x380">View more</a>
+                </div>
+                  <h3><a href="page-department-details.html">Aromatheraphy</a></h3>
+                <ul class="list-inline mb-10">
+                  <li>25 Days</li>
+                  <li>|</li>
+                  <li>20 Classes</li>
+                  <li>|</li>
+                  <li>June 26, 2016</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit voluptatem obcaecati</p>
+                <a href="#" class="btn btn-dark btn-theme-colored">Register Now</a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
+              <div class="box-hover-effect thumb-cross-effect">
+                  <div class="effect-wrapper">
+                    <div class="thumb">
+                      <img class="img-fullwidth" src="images/spa/services/4.jpg" alt="project">
+                    </div>
+                    <div class="text-holder text-holder-top-left">
+                      <div class="title text-theme-colored font-22">
+                        <i class="fa fa-dolar-o mr-10">$75</i>
+                      </div>
+                    </div>
+                    <div class="text-holder text-holder-top-right">
+                      <div class="title text-theme-colored font-22">
+                        <i class="fa fa-clock-o mr-5"></i> 9:00 AM - 5:00 PM
+                      </div>
+                    </div>
+                    <a class="hover-link" data-lightbox-gallery="gallery1-link" href="https://placehold.it/280x380">View more</a>
+                  </div>
+                  <h3><a href="page-department-details.html">Beauty Treatment</a></h3>
+                <ul class="list-inline mb-10">
+                  <li>25 Days</li>
+                  <li>|</li>
+                  <li>20 Classes</li>
+                  <li>|</li>
+                  <li>June 26, 2016</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit voluptatem obcaecati</p>
+                <a href="#" class="btn btn-dark btn-theme-colored">Register Now</a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
+              <div class="box-hover-effect thumb-cross-effect">
+                <div class="effect-wrapper">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="images/spa/services/5.jpg" alt="project">
+                  </div>
+                  <div class="text-holder text-holder-top-left">
+                    <div class="title text-theme-colored font-22">
+                      <i class="fa fa-dolar-o mr-10">$85</i>
+                    </div>
+                  </div>
+                  <div class="text-holder text-holder-top-right">
+                    <div class="title text-theme-colored font-22">
+                      <i class="fa fa-clock-o mr-5"></i> 9:00 AM - 5:00 PM
+                    </div>
+                  </div>
+                  <a class="hover-link" data-lightbox-gallery="gallery1-link" href="https://placehold.it/280x380">View more</a>
+                </div>
+                  <h3><a href="page-department-details.html">Pedicure and Manicure</a></h3>
+                <ul class="list-inline mb-10">
+                  <li>25 Days</li>
+                  <li>|</li>
+                  <li>20 Classes</li>
+                  <li>|</li>
+                  <li>June 26, 2016</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit voluptatem obcaecati</p>
+                <a href="#" class="btn btn-dark btn-theme-colored">Register Now</a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 mb-30">
+              <div class="box-hover-effect thumb-cross-effect">
+                  <div class="effect-wrapper">
+                    <div class="thumb">
+                      <img class="img-fullwidth" src="images/spa/services/6.jpg" alt="project">
+                    </div>
+                    <div class="text-holder text-holder-top-left">
+                      <div class="title text-theme-colored font-22">
+                        <i class="fa fa-dolar-o mr-10">$90</i>
+                      </div>
+                    </div>
+                    <div class="text-holder text-holder-top-right">
+                      <div class="title text-theme-colored font-22">
+                        <i class="fa fa-clock-o mr-5"></i> 9:00 AM - 5:00 PM
+                      </div>
+                    </div>
+                    <a class="hover-link" data-lightbox-gallery="gallery1-link" href="https://placehold.it/280x380">View more</a>
+                  </div>
+                  <h3><a href="page-department-details.html">Body Massage</a></h3>
+                <ul class="list-inline mb-10">
+                  <li>25 Days</li>
+                  <li>|</li>
+                  <li>20 Classes</li>
+                  <li>|</li>
+                  <li>June 26, 2016</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit voluptatem obcaecati</p>
+                <a href="#" class="btn btn-dark btn-theme-colored">Register Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </section>
+
+    <!-- Section: Calculator  -->
+    <section class="divider parallax" data-bg-img="images/spa/bg/bg15.jpg">
+      <div class="container">
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-6">
+              <div class="p-40 bg-theme-colored2 text-white pull-left">
+                <h2 class="mt-0 text-white">Make your Appointment Now!</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati.</p>
+                <!-- Appointment Form -->
+                <form id="appointment_form" name="appointment_form" class="" method="post" action="https://html.kodesolution.com/2017/health-yoga-html/demo/includes/appointment.php">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group mb-10">
+                        <input name="form_name" class="form-control" type="text" required="" placeholder="Enter Name" aria-required="true">
+                      </div>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="form-group mb-10">
+                        <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email" aria-required="true">
+                      </div>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="form-group mb-10">
+                        <input name="form_appontment_date" class="form-control required datetime-picker" type="text" placeholder="Appoinment Date & Time" aria-required="true">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-10">
+                    <textarea id="form_message" name="form_message" class="form-control required"  placeholder="Enter Message" rows="5" aria-required="true"></textarea>
+                  </div>
+                  <div class="form-group mb-0 mt-20">
+                    <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                    <button type="submit" class="btn btn-dark btn-theme-colored" data-loading-text="Please wait...">Send Message</button>
+                  </div>
+                </form>
+                <!-- Appointment Form Validation-->
+                <script type="text/javascript">
+                  $("#appointment_form").validate({
+                    submitHandler: function(form) {
+                      var form_btn = $(form).find('button[type="submit"]');
+                      var form_result_div = '#form-result';
+                      $(form_result_div).remove();
+                      form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                      var form_btn_old_msg = form_btn.html();
+                      form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                      $(form).ajaxSubmit({
+                        dataType:  'json',
+                        success: function(data) {
+                          if( data.status == 'true' ) {
+                            $(form).find('.form-control').val('');
+                          }
+                          form_btn.prop('disabled', false).html(form_btn_old_msg);
+                          $(form_result_div).html(data.message).fadeIn('slow');
+                          setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+                        }
+                      });
+                    }
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--start trainer Section-->
+    <section class="bg-lighter">
+      <div class="container pt-70 pb-70">
+        <div class="section-title text-center">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <h2 class="mt-0 line-height-1">Meet Our <span class="text-theme-colored">Instructors</span></h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
+            </div>
+          </div>
+        </div>
+        <div class="row mtli-row-clearfix">
+          <div class="col-md-12">
+            <div class="owl-carousel-4col" data-nav="true" data-dots="true">
+              <div class="item">
+                <div class="team-members text-center maxwidth400">
+                  <div class="team-thumb">
+                    <img class="img-fullwidth" alt="" src="images/spa/team/1.jpg">
+                  </div>
+                  <div class="team-details">
+                    <div class="p-10 bg-theme-colored">
+                      <h4 class="team-title text-uppercase mt-0 mb-0"><a href="#">Camiele James</a></h4>
+                      <p class="team-subtitle mt-0 mb-0">Beauty Expert</p>
+                    </div>
+                    <div class="p-20 bg-white">
+                      <div class="opening-hours text-left mb-30">
+                        <ul class="list-unstyled">
+                          <li class="clearfix line-height-1"> <span> Monday - Friday </span>
+                            <div class="value"> 9.00 - 20.00 </div>
+                          </li>
+                          <li class="clearfix line-height-1"> <span> Saturday </span>
+                            <div class="value"> 10.00 - 16.00 </div>
+                          </li>
+                          <li class="clearfix line-height-1"> <span> Sunday </span>
+                            <div class="value"> 9.30 - 18.00 </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <ul class="styled-icons icon-theme-colored icon-dark icon-circled icon-sm">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="team-members text-center maxwidth400">
+                  <div class="team-thumb">
+                    <img class="img-fullwidth" alt="" src="images/spa/team/2.jpg">
+                  </div>
+                  <div class="team-details">
+                    <div class="p-10 bg-theme-colored">
+                      <h4 class="team-title text-uppercase mt-0 mb-0"><a href="#">Laura Steward</a></h4>
+                      <p class="team-subtitle mt-0 mb-0">Beauty Expert</p>
+                    </div>
+                    <div class="p-20 bg-white">
+                      <div class="opening-hours text-left mb-30">
+                        <ul class="list-unstyled">
+                          <li class="clearfix line-height-1"> <span> Monday - Friday </span>
+                            <div class="value"> 9.00 - 20.00 </div>
+                          </li>
+                          <li class="clearfix line-height-1"> <span> Saturday </span>
+                            <div class="value"> 10.00 - 16.00 </div>
+                          </li>
+                          <li class="clearfix line-height-1"> <span> Sunday </span>
+                            <div class="value"> 9.30 - 18.00 </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <ul class="styled-icons icon-theme-colored icon-dark icon-circled icon-sm">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="team-members text-center maxwidth400">
+                  <div class="team-thumb">
+                    <img class="img-fullwidth" alt="" src="images/spa/team/3.jpg">
+                  </div>
+                  <div class="team-details">
+                    <div class="p-10 bg-theme-colored">
+                      <h4 class="team-title text-uppercase mt-0 mb-0"><a href="#">Camiele James</a></h4>
+                      <p class="team-subtitle mt-0 mb-0">Beauty Expert</p>
+                    </div>
+                    <div class="p-20 bg-white">
+                      <div class="opening-hours text-left mb-30">
+                        <ul class="list-unstyled">
+                          <li class="clearfix line-height-1"> <span> Monday - Friday </span>
+                            <div class="value"> 9.00 - 20.00 </div>
+                          </li>
+                          <li class="clearfix line-height-1"> <span> Saturday </span>
+                            <div class="value"> 10.00 - 16.00 </div>
+                          </li>
+                          <li class="clearfix line-height-1"> <span> Sunday </span>
+                            <div class="value"> 9.30 - 18.00 </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <ul class="styled-icons icon-theme-colored icon-dark icon-circled icon-sm">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="team-members text-center maxwidth400">
+                  <div class="team-thumb">
+                    <img class="img-fullwidth" alt="" src="images/spa/team/4.jpg">
+                  </div>
+                  <div class="team-details">
+                    <div class="p-10 bg-theme-colored">
+                      <h4 class="team-title text-uppercase mt-0 mb-0"><a href="#">Jenifer Kate</a></h4>
+                      <p class="team-subtitle mt-0 mb-0">Beauty Expert</p>
+                    </div>
+                    <div class="p-20 bg-white">
+                      <div class="opening-hours text-left mb-30">
+                        <ul class="list-unstyled">
+                          <li class="clearfix line-height-1"> <span> Monday - Friday </span>
+                            <div class="value"> 9.00 - 20.00 </div>
+                          </li>
+                          <li class="clearfix line-height-1"> <span> Saturday </span>
+                            <div class="value"> 10.00 - 16.00 </div>
+                          </li>
+                          <li class="clearfix line-height-1"> <span> Sunday </span>
+                            <div class="value"> 9.30 - 18.00 </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <ul class="styled-icons icon-theme-colored icon-dark icon-circled icon-sm">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="team-members text-center maxwidth400">
+                  <div class="team-thumb">
+                    <img class="img-fullwidth" alt="" src="images/spa/team/5.jpg">
+                  </div>
+                  <div class="team-details">
+                    <div class="p-10 bg-theme-colored">
+                      <h4 class="team-title text-uppercase mt-0 mb-0"><a href="#">Lisa Wilson</a></h4>
+                      <p class="team-subtitle mt-0 mb-0">Beauty Expert</p>
+                    </div>
+                    <div class="p-20 bg-white">
+                      <div class="opening-hours text-left mb-30">
+                        <ul class="list-unstyled">
+                          <li class="clearfix line-height-1"> <span> Monday - Friday </span>
+                            <div class="value"> 9.00 - 20.00 </div>
+                          </li>
+                          <li class="clearfix line-height-1"> <span> Saturday </span>
+                            <div class="value"> 10.00 - 16.00 </div>
+                          </li>
+                          <li class="clearfix line-height-1"> <span> Sunday </span>
+                            <div class="value"> 9.30 - 18.00 </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <ul class="styled-icons icon-theme-colored icon-dark icon-circled icon-sm">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--start funfact Section-->
+    <section class="divider parallax layer-overlay overlay-theme-colored-8" data-bg-img="images/spa/bg/bg7.jpg">
+      <div class="container pt-90 pb-90">
+        <div class="section-title text-center">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <h2 class="mt-0 text-white">Some Funfacts</h2>
+              <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-content">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+              <div class="funfact text-center">
+                <i class="flaticon-spa-aromatherapy-3 text-white"></i>
+                <h2 data-animation-duration="2000" data-value="350" class="animate-number text-white font-38">0</h2>
+                <h5 class="text-white text-uppercase mb-0">Aromatheraphy</h5>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+              <div class="funfact text-center">
+                <i class="flaticon-spa-massage text-white"></i>
+                <h2 data-animation-duration="2000" data-value="1250" class="animate-number text-white font-38">0</h2>
+                <h5 class="text-white text-uppercase mb-0">Renewal Massages</h5>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
+              <div class="funfact text-center">
+                <i class="flaticon-spa-candle-and-stone text-white"></i>
+                <h2 data-animation-duration="2000" data-value="6227" class="animate-number text-white font-38">0</h2>
+                <h5 class="text-white text-uppercase mb-0">Stone Use</h5>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 mb-md-0">
+              <div class="funfact text-center">
+                <i class="flaticon-spa-woman-with-flower text-white"></i>
+                <h2 data-animation-duration="2000" data-value="100%" class="animate-number text-white font-38">0</h2>
+                <h5 class="text-white text-uppercase mb-0">Happy Clients</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--start gallary Section-->
+    <section>
+      <div class="container-fluid pb-0">
+        <div class="section-title text-center mt-0">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <h2 class="mt-0 line-height-1">Our <span class="text-theme-colored2">Gallery</span></h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Portfolio Filter -->
+              <div class="portfolio-filter text-center">
+                <a href="#" class="active" data-filter="*">All</a>
+                <a href="#branding" class="" data-filter=".branding">Branding</a>
+                <a href="#design" class="" data-filter=".design">Design</a>
+                <a href="#photography" class="" data-filter=".photography">Photography</a>
+              </div>
+              <!-- End Portfolio Filter -->
+              
+              <!-- Portfolio Gallery Grid -->
+              <div class="gallery-isotope default-animation-effect grid-3 gutter-small clearfix" data-lightbox="gallery">
+                <!-- Portfolio Item Start -->
+                <div class="gallery-item design">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="images/spa/gallery/1.jpg" alt="project">
+                    <div class="overlay-shade"></div>
+                    <div class="text-holder">
+                      <div class="title text-center">Sample Title</div>
+                    </div>
+                    <div class="icons-holder">
+                      <div class="icons-holder-inner">
+                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                          <a href="images/spa/gallery/full/1.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Portfolio Item End -->
+                <!-- Portfolio Item Start -->
+                <div class="gallery-item branding photography">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="images/spa/gallery/2.jpg" alt="project">
+                    <div class="overlay-shade"></div>
+                    <div class="text-holder">
+                      <div class="title text-center">Sample Title</div>
+                    </div>
+                    <div class="icons-holder">
+                      <div class="icons-holder-inner">
+                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                          <a href="images/spa/gallery/full/2.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Portfolio Item End -->
+                <!-- Portfolio Item Start -->
+                <div class="gallery-item design">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="images/spa/gallery/3.jpg" alt="project">
+                    <div class="overlay-shade"></div>
+                    <div class="text-holder">
+                      <div class="title text-center">Sample Title</div>
+                    </div>
+                    <div class="icons-holder">
+                      <div class="icons-holder-inner">
+                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                          <a href="images/spa/gallery/full/3.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Portfolio Item End -->
+                <!-- Portfolio Item Start -->
+                <div class="gallery-item branding">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="images/spa/gallery/4.jpg" alt="project">
+                    <div class="overlay-shade"></div>
+                    <div class="text-holder">
+                      <div class="title text-center">Sample Title</div>
+                    </div>
+                    <div class="icons-holder">
+                      <div class="icons-holder-inner">
+                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                          <a href="images/spa/gallery/full/4.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Portfolio Item End -->
+                <!-- Portfolio Item Start -->
+                <div class="gallery-item design photography">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="images/spa/gallery/5.jpg" alt="project">
+                    <div class="overlay-shade"></div>
+                    <div class="text-holder">
+                      <div class="title text-center">Sample Title</div>
+                    </div>
+                    <div class="icons-holder">
+                      <div class="icons-holder-inner">
+                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                          <a href="images/spa/gallery/full/5.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Portfolio Item End -->
+                <!-- Portfolio Item Start -->
+                <div class="gallery-item photography">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="images/spa/gallery/6.jpg" alt="project">
+                    <div class="overlay-shade"></div>
+                    <div class="text-holder">
+                      <div class="title text-center">Sample Title</div>
+                    </div>
+                    <div class="icons-holder">
+                      <div class="icons-holder-inner">
+                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                          <a href="images/spa/gallery/full/6.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Portfolio Item End -->
+                <!-- Portfolio Item Start -->
+                <div class="gallery-item branding">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="images/spa/gallery/7.jpg" alt="project">
+                    <div class="overlay-shade"></div>
+                    <div class="text-holder">
+                      <div class="title text-center">Sample Title</div>
+                    </div>
+                    <div class="icons-holder">
+                      <div class="icons-holder-inner">
+                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                          <a href="images/spa/gallery/full/7.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Portfolio Item End -->
+                <!-- Portfolio Item Start -->
+                <div class="gallery-item photography">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="images/spa/gallery/8.jpg" alt="project">
+                    <div class="overlay-shade"></div>
+                    <div class="text-holder">
+                      <div class="title text-center">Sample Title</div>
+                    </div>
+                    <div class="icons-holder">
+                      <div class="icons-holder-inner">
+                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                          <a href="images/spa/gallery/full/8.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Portfolio Item End -->
+                <!-- Portfolio Item Start -->
+                <div class="gallery-item branding">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="images/spa/gallery/9.jpg" alt="project">
+                    <div class="overlay-shade"></div>
+                    <div class="text-holder">
+                      <div class="title text-center">Sample Title</div>
+                    </div>
+                    <div class="icons-holder">
+                      <div class="icons-holder-inner">
+                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                          <a href="images/spa/gallery/full/9.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Portfolio Item End -->
+              </div>
+              <!-- End Portfolio Gallery Grid -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+     
+    
+
+    <!--start testimonial Section-->
+   
+   <?php include ('inc/testimonials.php')?>
+   
+    <!--start blog Section-->
+    
+
+   <?php include ('inc/recent-blogs.php')?>
+   
+  </div>
+
+  <!-- Footer -->
+  <?php include ('inc/footer.php')?>
+  
+  
+</div>
+<!-- end wrapper -->
+
+<!-- Footer Scripts -->
+<!-- JS | Custom script for all pages -->
+<script src="js/custom.js"></script>
+
+<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
+      (Load Extensions only on Local File Systems ! 
+       The following part can be removed on Server for On Demand Loading) -->
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.actions.min.js"></script>
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.carousel.min.js"></script>
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.migration.min.js"></script>
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.navigation.min.js"></script>
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+
+</body>
+
+</html>
