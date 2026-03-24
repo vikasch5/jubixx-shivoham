@@ -20,12 +20,12 @@
                         <span class="d-none d-lg-inline-block"><?php echo $_SESSION['admin_name'] ?? 'Admin'; ?></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li>
+                        <!-- <li>
                             <a class="dropdown-link-item" href="#">
                                 <i class="mdi mdi-settings"></i>
                                 <span class="nav-text">Profile</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li>
                             <a class="dropdown-link-item" href="logout.php">
                                 <i class="mdi mdi-logout"></i>

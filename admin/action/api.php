@@ -24,6 +24,10 @@ switch ($action) {
     case 'save_blog':
         saveBlog();
         break;
+    
+    case 'delete_blog':
+        deleteBlog();
+        break;
 
     default:
         response('error', 'Invalid API action');
@@ -101,7 +105,7 @@ function saveBlog()
 
     $title = trim($_POST['title'] ?? '');
     $slug = trim($_POST['slug'] ?? '');
-    $status = intval($_POST['status'] ?? 1);
+    $status = $_POST['status'] ?? '';
 
     $description = $_POST['description'] ?? ''; // Summernote HTML
     $meta_title = trim($_POST['meta_title'] ?? '');
@@ -267,3 +271,50 @@ function saveBlog()
     }
 }
 
+function deleteBlog()
+{
+    global $conn;
+
+    if (!isset($_SESSION['admin_id'])) {
+        response('error', 'Unauthorized access');
+    }
+
+    $id = intval($_POST['id'] ?? 0);
+
+    if ($id <= 0) {
+        response('error', 'Invalid blog ID');
+    }
+
+    $stmt = mysqli_prepare($conn, "SELECT image, author_image FROM blogs WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, 'i', $id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if (!$row = mysqli_fetch_assoc($result)) {
+        response('error', 'Blog not found');
+    }
+
+    $delStmt = mysqli_prepare($conn, "DELETE FROM blogs WHERE id = ?");
+    mysqli_stmt_bind_param($delStmt, 'i', $id);
+
+    if (mysqli_stmt_execute($delStmt)) {
+
+        if (!empty($row['image'])) {
+            $path = '../../uploads/blogs/' . $row['image'];
+            if (file_exists($path)) {
+                unlink($path);
+            }
+        }
+
+        if (!empty($row['author_image'])) {
+            $path = '../../uploads/authors/' . $row['author_image'];
+            if (file_exists($path)) {
+                unlink($path);
+            }
+        }
+
+        response('success', 'Blog deleted successfully');
+    }
+
+    response('error', 'Failed to delete blog');
+}

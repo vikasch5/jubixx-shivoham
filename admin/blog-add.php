@@ -161,9 +161,9 @@ if ($isEdit) {
                                     <div class="col-md-4">
                                         <label>Status</label>
                                         <select name="status" class="form-control">
-                                            <option value="1" <?= $data['status'] == 1 ? 'selected' : ''; ?>>Published
+                                            <option value="published" <?= $data['status'] == 'published' ? 'selected' : ''; ?>>Published
                                             </option>
-                                            <option value="0" <?= $data['status'] == 0 ? 'selected' : ''; ?>>Draft</option>
+                                            <option value="draft" <?= $data['status'] == 'draft' ? 'selected' : ''; ?>>Draft</option>
                                         </select>
                                     </div>
 
