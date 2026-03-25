@@ -61,8 +61,8 @@ text-decoration:none;
           <div class="col-md-6">
             <div class="widget">
               <ul class="list-inline pull-right flip sm-pull-none sm-text-center">
-                <li><i class="fa fa-phone text-white"></i> <a class="text-white" href="#">+91 70076-95958</a></li>
-                <li><i class="fa fa-envelope-o text-white"></i> <a class="text-white" href="#">support@shivohamshiv.com</a></li>
+                <li><i class="fa fa-phone text-white"></i> <a class="text-white" href="#"><?= $settings['phone_number'] ?></a></li>
+                <li><i class="fa fa-envelope-o text-white"></i> <a class="text-white" href="#"><?= $settings['email'] ?></a></li>
               </ul>
             </div>
           </div>
@@ -76,21 +76,21 @@ text-decoration:none;
             <div class="widget no-border sm-text-center mt-10 mb-10 m-0">
               <i class="fa fa-envelope text-theme-colored font-32 mt-5 mr-sm-0 sm-display-block pull-left flip sm-pull-none"></i>
               <a href="#" class="font-12 text-gray text-uppercase">Mail Us Today</a>
-              <h5 class="font-13 text-black m-0"> support@shivohamshiv.com</h5>
+              <h5 class="font-13 text-black m-0"> <?= $settings['email'] ?></h5>
             </div>
           </div>
           <div class="col-xs-12 col-sm-4 col-md-3">
             <div class="widget no-border sm-text-center mt-10 mb-10 m-0">
               <i class="fa fa-phone-square text-theme-colored font-32 mt-5 mr-sm-0 sm-display-block pull-left flip sm-pull-none"></i>
               <a href="#" class="font-12 text-gray text-uppercase">Call us for more details</a>
-              <h5 class="font-13 text-black m-0"> +91 70076-95958</h5>
+              <h5 class="font-13 text-black m-0"> <?= $settings['phone_number'] ?></h5>
             </div>
           </div>
           <div class="col-xs-12 col-sm-4 col-md-3">
             <div class="widget no-border sm-text-center mt-10 mb-10 m-0">
               <i class="fa fa-building-o text-theme-colored font-32 mt-5 mr-sm-0 sm-display-block pull-left flip sm-pull-none"></i>
               <a href="#" class="font-12 text-gray text-uppercase">Company Location</a>
-              <h5 class="font-13 text-black m-0">  Jhansi, Uttar Pradesh</h5>
+              <h5 class="font-13 text-black m-0"> <?= $settings['address'] ?></h5>
             </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-3">

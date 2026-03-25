@@ -81,6 +81,10 @@
       <div class="container">
         <div class="row multi-row-clearfix">
           <div class="blog-posts">
+            <?php
+              $blogQuery = mysqli_query($conn, "SELECT * FROM blogs where status = 'published'");
+              while($blogs = mysqli_fetch_array($blogQuery)){
+            ?>
             <div class="col-md-4">
               <article class="post clearfix mb-30 bg-lighter blog-card">
             
@@ -119,90 +123,7 @@
             
               </article>
             </div>
-
-
-
-            <div class="col-md-4">
-              <article class="post clearfix mb-30 bg-lighter blog-card">
-            
-                <div class="entry-header">
-                  <div class="post-thumb thumb">
-                    <img src="images/ChatGPT-Image-Feb-13-2026-02_46_07-PM-768x512.webp" alt="" class="img-responsive img-fullwidth">
-                  </div>
-                </div>
-            
-                <div class="entry-content border-1px p-20 pr-10">
-            
-                  <div class="blog-meta">
-            
-                    <div class="blog-date">
-                      <span class="day">13</span>
-                      <span class="month">Feb</span>
-                    </div>
-            
-                    <div class="blog-title">
-                      <h4 class="entry-title text-uppercase m-0">
-                        <a href="blog-single-right-sidebar.html">
-                          What Is a Vipassana Course? A Complete Beginner’s Guide to the 10-Day Meditation Retreat
-                        </a>
-                      </h4>
-                    </div>
-            
-                  </div>
-            
-                  <p class="mt-10">
-                    Stress, anxiety, and mental fatigue have become a regular part of life in this high-speed digital world and more people are now seeking deeper forms of healing than simply relaxing for a moment...
-                  </p>
-            
-                  <a href="blog-details.php" class="btn btn-theme-colored">Read more</a>
-            
-                </div>
-            
-              </article>
-            </div>
-            
-            <div class="col-md-4">
-              <article class="post clearfix mb-30 bg-lighter blog-card">
-            
-                <div class="entry-header">
-                  <div class="post-thumb thumb position-relative">
-            
-                    <img src="images/ChatGPT-Image-Feb-10-2026-02_31_03-PM-768x512.webp"
-                         alt="" class="img-responsive img-fullwidth">
-            
-                   
-            
-                  </div>
-                </div>
-            
-                <div class="entry-content border-1px p-20 pr-10">
-            
-                  <div class="blog-meta">
-                
-                    <!-- DATE -->
-                    <div class="blog-date">
-                      <span class="day">28</span>
-                      <span class="month">Feb</span>
-                    </div>
-                
-                    <!-- TITLE -->
-                    <div class="blog-title">
-                      <h4 class="entry-title text-uppercase m-0">
-                        <a href="blog-single-right-sidebar.html">
-                        Screens, Stress & School Pressure: Why Kids Need Mindfulness & EQ Training More Than Ever
-                        </a>
-                      </h4>
-                    </div>
-                
-                  </div>
-            
-              <p class="mt-10">
-              The childhood experience of children has undergone a significant transformation over the past decade. Children now spend most of their time with screens, have higher academic expectations than...
-              </p>
-            
-              <a href="blog-details.php" class="btn btn-theme-colored">Read more</a>
-            
-            </div>
+            <?php } ?>
             
               </article>
             </div>

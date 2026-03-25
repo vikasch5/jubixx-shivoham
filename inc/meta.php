@@ -1,6 +1,17 @@
+<?php
+include 'admin/inc/config.php';
+// define('URL', 'https://jobkarts.co.in/');
+$q = mysqli_query($conn, "SELECT * FROM settings WHERE id = 1");
+$settings = mysqli_fetch_assoc($q);
+
+?>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <!-- Favicon and Touch Icons -->
-<!--<link href="images/favicon.png" rel="shortcut icon" type="image/png">-->
-<link rel="shortcut icon" type="image/webp" href="images/shiv-logo.webp">
+<link rel="icon" href="uploads/settings/<?= $settings['favicon'] ?>">
+<title><?= $settings['meta_title'] ?></title>
+<meta name="keywords" content="<?= $settings['meta_keywords'] ?>">
+<meta name="description" content="<?= $settings['meta_description'] ?>">
+<meta name="author" content="Fgc India" />
 <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
 <link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
 <link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">

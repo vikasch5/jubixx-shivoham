@@ -29,6 +29,10 @@ switch ($action) {
         deleteBlog();
         break;
 
+    case 'save_settings':
+    saveSettings();
+    break;
+
     default:
         response('error', 'Invalid API action');
 }
@@ -317,4 +321,74 @@ function deleteBlog()
     }
 
     response('error', 'Failed to delete blog');
+}
+
+function saveSettings()
+{
+    global $conn;
+
+    if (!isset($_SESSION['admin_id'])) {
+        response('error', 'Unauthorized');
+    }
+
+    $meta_title = trim($_POST['meta_title'] ?? '');
+    $meta_keywords = trim($_POST['meta_keywords'] ?? '');
+    $meta_description = trim($_POST['meta_description'] ?? '');
+    $youtube = trim($_POST['youtube'] ?? '');
+    $facebook = trim($_POST['facebook'] ?? '');
+    $instagram = trim($_POST['instagram'] ?? '');
+    $linkedin = trim($_POST['linkedin'] ?? '');
+    $twitter = trim($_POST['twitter'] ?? '');
+    $whatsapp = trim($_POST['whatsapp'] ?? '');
+    $address = trim($_POST['address'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+
+
+    $uploadDir = dirname(__DIR__, 2) . '/uploads/settings/';
+    if (!is_dir($uploadDir))
+        mkdir($uploadDir, 0755, true);
+
+    $logoSql = $faviconSql = '';
+
+    /* LOGO */
+    if (!empty($_FILES['site_logo']['name'])) {
+        $ext = pathinfo($_FILES['site_logo']['name'], PATHINFO_EXTENSION);
+        $logo = 'logo_' . time() . '.' . $ext;
+        move_uploaded_file($_FILES['site_logo']['tmp_name'], $uploadDir . $logo);
+        $logoSql = ", site_logo='$logo'";
+    }
+
+    /* FAVICON */
+    if (!empty($_FILES['favicon']['name'])) {
+        $ext = pathinfo($_FILES['favicon']['name'], PATHINFO_EXTENSION);
+        $favicon = 'favicon_' . time() . '.' . $ext;
+        move_uploaded_file($_FILES['favicon']['tmp_name'], $uploadDir . $favicon);
+        $faviconSql = ", favicon='$favicon'";
+    }
+
+    $sql = "
+        UPDATE settings SET
+        meta_title=?,
+        meta_keywords=?,
+        meta_description=?
+        $logoSql
+        $faviconSql,
+        youtube = ?,
+        facebook = ?,
+        instagram = ?,
+        linkedin = ?,
+        twitter = ?,
+        whatsapp = ?,
+        address = ?,
+        phone_number = ?,
+        email = ?
+        WHERE id=1
+    ";
+
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, 'ssssssssssss', $meta_title, $meta_keywords, $meta_description, $youtube, $facebook, $instagram, $linkedin, $twitter, $whatsapp,$address,$phone,$email);
+    mysqli_stmt_execute($stmt)
+        ? response('success', 'Settings updated successfully')
+        : response('error', 'Failed to save settings');
 }

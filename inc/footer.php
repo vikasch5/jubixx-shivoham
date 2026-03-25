@@ -14,13 +14,49 @@
 	          </div>
 	          <div class="widget dark">
 	            <h5 class="widget-title mb-10">Connect With Us</h5>
-	            <ul class="styled-icons icon-dark icon-circled icon-sm">
-	              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-	              <li><a href="#"><i class="fa fa-skype"></i></a></li>
-	              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-	              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-	              <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-	            </ul>
+	           <ul class="styled-icons icon-dark icon-circled icon-sm">
+
+								<?php if (!empty($settings['facebook'])): ?>
+										<li>
+												<a href="<?= $settings['facebook']; ?>" target="_blank">
+														<i class="fa fa-facebook"></i>
+												</a>
+										</li>
+								<?php endif; ?>
+
+								<?php if (!empty($settings['twitter'])): ?>
+										<li>
+												<a href="<?= $settings['twitter']; ?>" target="_blank">
+														<i class="fa fa-twitter"></i>
+												</a>
+										</li>
+								<?php endif; ?>
+
+								<?php if (!empty($settings['youtube'])): ?>
+										<li>
+												<a href="<?= $settings['youtube']; ?>" target="_blank">
+														<i class="fa fa-youtube"></i>
+												</a>
+										</li>
+								<?php endif; ?>
+
+								<?php if (!empty($settings['instagram'])): ?>
+										<li>
+												<a href="<?= $settings['instagram']; ?>" target="_blank">
+														<i class="fa fa-instagram"></i>
+												</a>
+										</li>
+								<?php endif; ?>
+
+								<?php if (!empty($settings['linkedin'])): ?>
+										<li>
+												<a href="<?= $settings['linkedin']; ?>" target="_blank">
+														<i class="fa fa-linkedin"></i>
+												</a>
+										</li>
+								<?php endif; ?>
+
+						</ul>
 	          </div>
 	        </div>
 	        <div class="col-sm-6 col-md-3">

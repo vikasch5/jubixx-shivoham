@@ -3,10 +3,10 @@
 
 <head>
 <!-- Meta Tags -->
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 <meta name="description" content="Yoga | Health Beauty & Yoga Responsive HTML5 Template" />
-<meta name="keywords" content="care, clinic, corporate, dental, dentist, doctor" />
+<meta name="keywords" content="care, clinic, corporate, dental, dentist, doctor" /> -->
 
 <!-- Page Title -->
 <title>Shivoham Shiv</title>
