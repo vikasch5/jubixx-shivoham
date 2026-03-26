@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 session_start();
 require_once '../inc/config.php';
 
@@ -30,8 +33,16 @@ switch ($action) {
         break;
 
     case 'save_settings':
-    saveSettings();
-    break;
+        saveSettings();
+        break;
+    
+    case 'save_gallery':
+        saveGallery();
+        break;
+
+    case 'delete_gallery':
+        deleteGallery();
+        break;
 
     default:
         response('error', 'Invalid API action');
@@ -391,4 +402,145 @@ function saveSettings()
     mysqli_stmt_execute($stmt)
         ? response('success', 'Settings updated successfully')
         : response('error', 'Failed to save settings');
+}
+
+function saveGallery()
+{
+    global $conn;
+
+    if (!isset($_SESSION['admin_id'])) {
+        response('error', 'Unauthorized');
+    }
+
+    $id     = intval($_POST['id'] ?? 0);
+    $title  = trim($_POST['title'] ?? '');
+    $status = $_POST['status'] ?? '';
+
+    if (empty($title)) {
+        response('error', 'Title is required');
+    }
+
+    // ✅ UNIVERSAL PATH (WORKS EVERYWHERE)
+    $basePath  = realpath(__DIR__ . '/../../');
+    $uploadDir = $basePath . '/uploads/gallery/';
+
+    // Ensure folder exists
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0777, true);
+    }
+
+    $imageSql  = '';
+    $imageName = '';
+
+    /* ================= IMAGE UPLOAD ================= */
+    if (!empty($_FILES['image']['name'])) {
+
+        // Check upload error
+        if ($_FILES['image']['error'] !== 0) {
+            response('error', 'Upload error code: ' . $_FILES['image']['error']);
+        }
+
+        // Check temp file
+        if (!file_exists($_FILES['image']['tmp_name'])) {
+            response('error', 'Temp file missing');
+        }
+
+        // Validate extension
+        $ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+        $allowed = ['jpg', 'jpeg', 'png', 'webp'];
+
+        if (!in_array($ext, $allowed)) {
+            response('error', 'Invalid image format');
+        }
+
+        // Generate unique name
+        $imageName = 'gallery_' . time() . '_' . rand(1000,9999) . '.' . $ext;
+
+        $fullPath = $uploadDir . $imageName;
+
+        // Move file
+        if (!move_uploaded_file($_FILES['image']['tmp_name'], $fullPath)) {
+            response('error', 'Upload failed → ' . $fullPath);
+        }
+
+        $imageSql = ", image='$imageName'";
+    }
+
+    /* ================= UPDATE ================= */
+    if ($id > 0) {
+
+        // Delete old image if new uploaded
+        if ($imageName) {
+            $old = mysqli_fetch_assoc(mysqli_query($conn, "SELECT image FROM gallery WHERE id=$id"));
+
+            if (!empty($old['image'])) {
+                $oldPath = $uploadDir . $old['image'];
+                if (file_exists($oldPath)) {
+                    unlink($oldPath);
+                }
+            }
+        }
+
+        $sql = "
+            UPDATE gallery SET
+            title = ?,
+            status = ?
+            $imageSql
+            WHERE id = ?
+        ";
+
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, 'ssi', $title, $status, $id);
+
+        if (mysqli_stmt_execute($stmt)) {
+            response('success', 'Gallery updated successfully');
+        } else {
+            response('error', 'Update failed');
+        }
+
+    } else {
+
+        /* ================= INSERT ================= */
+
+        if (empty($imageName)) {
+            response('error', 'Image is required');
+        }
+
+        $sql = "INSERT INTO gallery (title, image, status) VALUES (?, ?, ?)";
+
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, 'sss', $title, $imageName, $status);
+
+        if (mysqli_stmt_execute($stmt)) {
+            response('success', 'Gallery added successfully');
+        } else {
+            response('error', 'Insert failed');
+        }
+    }
+}
+function deleteGallery()
+{
+    global $conn;
+
+    if (!isset($_SESSION['admin_id'])) {
+        response('error', 'Unauthorized');
+    }
+
+    $id = intval($_POST['id']);
+
+    $data = mysqli_fetch_assoc(mysqli_query($conn, "SELECT image FROM gallery WHERE id=$id"));
+
+    if ($data) {
+        $path = realpath(__DIR__ . '/../../') . '/uploads/gallery/' . $data['image'];
+
+        if (!empty($data['image']) && file_exists($path)) {
+            unlink($path);
+        }
+
+        mysqli_query($conn, "DELETE FROM gallery WHERE id=$id");
+
+        response('success', 'Gallery deleted successfully');
+    } else {
+        response('error', 'Record not found');
+    }
 }

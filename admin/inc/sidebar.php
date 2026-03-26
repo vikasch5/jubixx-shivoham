@@ -30,37 +30,44 @@ $settings = mysqli_fetch_assoc($q);
             <ul class="nav sidebar-inner" id="sidebar-menu">
 
                 <!-- Dashboard -->
-                <li class="<?= $currentPage == 'dashboard.php' ? 'active' : '' ?>">
-                    <a class="sidenav-item-link" href="dashboard.php">
-                        <i class="mdi mdi-briefcase-account-outline"></i>
-                        <span class="nav-text">Dashboard</span>
-                    </a>
-                </li>
+<li class="<?= $currentPage == 'dashboard.php' ? 'active' : '' ?>">
+    <a class="sidenav-item-link" href="dashboard.php">
+        <i class="mdi mdi-view-dashboard"></i>
+        <span class="nav-text">Dashboard</span>
+    </a>
+</li>
 
-                <li class="<?= in_array($currentPage,['blog-list.php','blog-add.php']) ? 'active' : '' ?>">
-                    <a class="sidenav-item-link" href="blog-list.php">
-                        <i class="mdi mdi-settings"></i>
-                        <span class="nav-text">Blogs</span>
-                    </a>
-                </li>
-                
+<!-- Blogs -->
+<li class="<?= in_array($currentPage,['blog-list.php','blog-add.php']) ? 'active' : '' ?>">
+    <a class="sidenav-item-link" href="blog-list.php">
+        <i class="mdi mdi-file-document"></i>
+        <span class="nav-text">Blogs</span>
+    </a>
+</li>
 
-                <li class="<?= $currentPage == 'settings.php' ? 'active' : '' ?>">
-                    <a class="sidenav-item-link" href="settings.php">
-                        <i class="mdi mdi-settings"></i>
-                        <span class="nav-text">Settings</span>
-                    </a>
-                </li>
-                
-                <li class="<?= in_array($currentPage, ['contact-leads.php']) ? 'active' : '' ?>">
-                    <a class="sidenav-item-link" href="contact-leads.php">
-                        <i class="mdi mdi-email-outline"></i>
+<!-- Gallery -->
+<li class="<?= in_array($currentPage,['gallery-list.php','gallery-add.php','gallery-form.php']) ? 'active' : '' ?>">
+    <a class="sidenav-item-link" href="gallery-list.php">
+        <i class="mdi mdi-image"></i>
+        <span class="nav-text">Gallery</span>
+    </a>
+</li>
 
-                        <span class="nav-text">Contact Us Leads</span>
-                    </a>
-                </li>
+<!-- Settings -->
+<li class="<?= $currentPage == 'settings.php' ? 'active' : '' ?>">
+    <a class="sidenav-item-link" href="settings.php">
+        <i class="mdi mdi-settings"></i>
+        <span class="nav-text">Settings</span>
+    </a>
+</li>
 
-
+<!-- Contact Leads -->
+<li class="<?= in_array($currentPage, ['contact-leads.php']) ? 'active' : '' ?>">
+    <a class="sidenav-item-link" href="contact-leads.php">
+        <i class="mdi mdi-email"></i>
+        <span class="nav-text">Contact Us Leads</span>
+    </a>
+</li>
             </ul>
         </div>
     </div>

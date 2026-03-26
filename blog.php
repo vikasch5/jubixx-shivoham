@@ -81,67 +81,111 @@
       <div class="container">
         <div class="row multi-row-clearfix">
           <div class="blog-posts">
-            <?php
-              $blogQuery = mysqli_query($conn, "SELECT * FROM blogs where status = 'published'");
-              while($blogs = mysqli_fetch_array($blogQuery)){
-            ?>
-            <div class="col-md-4">
-              <article class="post clearfix mb-30 bg-lighter blog-card">
-            
-                <div class="entry-header">
-                  <div class="post-thumb thumb">
-                    <img src="images/ChatGPT-Image-Mar-6-2026-03_19_10-PM-768x512.webp" alt="" class="img-responsive img-fullwidth">
-                  </div>
-                </div>
-            
-                <div class="entry-content border-1px p-20 pr-10">
-            
-                  <div class="blog-meta">
-            
-                    <div class="blog-date">
-                      <span class="day">28</span>
-                      <span class="month">Feb</span>
-                    </div>
-            
-                    <div class="blog-title">
-                      <h4 class="entry-title text-uppercase m-0">
-                        <a href="blog-single-right-sidebar.html">
-                          Guided Meditation for Better Sleep: A Natural Solution for Insomnia
-                        </a>
-                      </h4>
-                    </div>
-            
-                  </div>
-            
-                  <p class="mt-10">
-                    With the modern pace of life, sleep is often an expense; both in terms of quantity and quality. Stressful work, late-night screen time, changing schedules and constant mental stimulation have created...
-                  </p>
-            
-                  <a href="blog-details.php" class="btn btn-theme-colored">Read more</a>
-            
-                </div>
-            
-              </article>
-            </div>
-            <?php } ?>
+           <?php
+// Pagination setup
+$limit = 6; // blogs per page
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$page = ($page < 1) ? 1 : $page;
+
+$offset = ($page - 1) * $limit;
+
+// Total records
+$totalQuery = mysqli_query($conn, "SELECT COUNT(*) as total FROM blogs WHERE status='published'");
+$totalData = mysqli_fetch_assoc($totalQuery);
+$totalBlogs = $totalData['total'];
+
+$totalPages = ceil($totalBlogs / $limit);
+
+// Fetch blogs
+$blogQuery = mysqli_query($conn, "SELECT * FROM blogs WHERE status='published' ORDER BY created_at DESC LIMIT $limit OFFSET $offset");
+
+while($blogs = mysqli_fetch_assoc($blogQuery)) {
+
+    $date = date("d", strtotime($blogs['created_at']));
+    $month = date("M", strtotime($blogs['created_at']));
+    $short_desc = substr(strip_tags($blogs['description']), 0, 150) . '...';
+?>
+<div class="col-md-4">
+  <article class="post clearfix mb-30 bg-lighter blog-card">
+
+    <div class="entry-header">
+      <div class="post-thumb thumb">
+        <img src="uploads/blogs/<?php echo $blogs['image']; ?>" 
+             alt="<?php echo htmlspecialchars($blogs['title']); ?>" 
+             class="img-responsive img-fullwidth">
+      </div>
+    </div>
+
+    <div class="entry-content border-1px p-20 pr-10">
+
+      <div class="blog-meta">
+
+        <div class="blog-date">
+          <span class="day"><?php echo $date; ?></span>
+          <span class="month"><?php echo $month; ?></span>
+        </div>
+
+        <div class="blog-title">
+          <h4 class="entry-title text-uppercase m-0">
+            <a href="blog-details.php?slug=<?php echo $blogs['slug']; ?>">
+              <?php echo htmlspecialchars($blogs['title']); ?>
+            </a>
+          </h4>
+        </div>
+
+      </div>
+
+      <p class="mt-10">
+        <?php echo $short_desc; ?>
+      </p>
+
+      <a href="blog-details.php?slug=<?php echo $blogs['slug']; ?>" class="btn btn-theme-colored">
+        Read more
+      </a>
+
+    </div>
+
+  </article>
+</div>
+<?php } ?>
             
               </article>
             </div>
             
             <div class="col-md-12">
-              <nav>
-                <ul class="pagination theme-colored">
-                  <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">«</span> </a> </li>
-                  <li class="active"><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li><a href="#">...</a></li>
-                  <li> <a href="#" aria-label="Next"> <span aria-hidden="true">»</span> </a> </li>
-                </ul>
-              </nav>
-            </div>
+  <nav>
+    <ul class="pagination theme-colored">
+
+      <!-- Previous -->
+      <?php if($page > 1){ ?>
+        <li>
+          <a href="?page=<?php echo $page-1; ?>" aria-label="Previous">
+            <span aria-hidden="true">«</span>
+          </a>
+        </li>
+      <?php } ?>
+
+      <!-- Page Numbers -->
+      <?php for($i = 1; $i <= $totalPages; $i++){ ?>
+        <li class="<?php echo ($i == $page) ? 'active' : ''; ?>">
+          <a href="?page=<?php echo $i; ?>">
+            <?php echo $i; ?>
+          </a>
+        </li>
+      <?php } ?>
+
+      <!-- Next -->
+      <?php if($page < $totalPages){ ?>
+        <li>
+          <a href="?page=<?php echo $page+1; ?>" aria-label="Next">
+            <span aria-hidden="true">»</span>
+          </a>
+        </li>
+      <?php } ?>
+
+    </ul>
+  </nav>
+</div>
           </div>
         </div>
       </div>
