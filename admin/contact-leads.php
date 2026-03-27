@@ -8,7 +8,7 @@ if (!isset($_SESSION['admin_id'])) {
 }
 
 // Fetch contact leads
-$sql = "SELECT id, name, subject, email, phone, message, created_at 
+$sql = "SELECT id, name, email, phone, message, created_at 
         FROM contact_leads 
         ORDER BY id DESC";
 
@@ -50,7 +50,6 @@ $result = mysqli_query($conn, $sql);
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>Phone</th>
-                                                <th>Subject</th>
                                                 <th>Message</th>
                                                 <th>Date</th>
                                                 <!-- <th class="text-center">Action</th> -->
@@ -77,7 +76,6 @@ $result = mysqli_query($conn, $sql);
 
                                                         <td><?= htmlspecialchars($row['phone']); ?></td>
 
-                                                        <td><?= htmlspecialchars($row['subject']); ?></td>
 
                                                         <td>
                                                             <?= nl2br(htmlspecialchars(substr($row['message'], 0, 50))); ?>...

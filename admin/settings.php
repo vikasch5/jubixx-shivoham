@@ -16,6 +16,7 @@ $settings = mysqli_fetch_assoc($q);
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'inc/head.php'; ?>
+
 <body class="navbar-fixed sidebar-fixed" id="body">
 
     <div class="wrapper">
@@ -81,34 +82,46 @@ $settings = mysqli_fetch_assoc($q);
                                                 <textarea name="meta_description" class="form-control"
                                                     rows="3"><?= htmlspecialchars($settings['meta_description'] ?? '') ?></textarea>
                                             </div>
-                                            
+
                                             <!-- Contact Information -->
-<div class="col-12 mt-4">
-    <h5 class="mb-3">Contact Information</h5>
-</div>
+                                            <div class="col-12 mt-4">
+                                                <h5 class="mb-3">Contact Information</h5>
+                                            </div>
 
-<!-- Address -->
-<div class="col-md-12 mb-3">
-    <label class="form-label">Address</label>
-    <textarea name="address" class="form-control" rows="3"
-        placeholder="Enter full address"><?= htmlspecialchars($settings['address'] ?? '') ?></textarea>
-</div>
+                                            <!-- Address -->
+                                            <div class="col-md-12 mb-3">
+                                                <label class="form-label">Header Address</label>
+                                                <textarea name="header_address" class="form-control" rows="3"
+                                                    placeholder="Enter full address"><?= htmlspecialchars($settings['header_address'] ?? '') ?></textarea>
+                                            </div>
+                                            <div class="col-md-12 mb-3">
+                                                <label class="form-label">Footer Address</label>
+                                                <textarea name="address" class="form-control" rows="3"
+                                                    placeholder="Enter full address"><?= htmlspecialchars($settings['address'] ?? '') ?></textarea>
+                                            </div>
 
-<!-- Email -->
-<div class="col-md-6 mb-3">
-    <label class="form-label">Email</label>
-    <input type="email" name="email" class="form-control"
-        placeholder="example@gmail.com"
-        value="<?= htmlspecialchars($settings['email'] ?? '') ?>">
-</div>
+                                            <!-- Email -->
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">Email</label>
+                                                <input type="email" name="email" class="form-control"
+                                                    placeholder="example@gmail.com"
+                                                    value="<?= htmlspecialchars($settings['email'] ?? '') ?>">
+                                            </div>
 
-<!-- Phone -->
-<div class="col-md-6 mb-3">
-    <label class="form-label">Phone Number</label>
-    <input type="text" name="phone" class="form-control"
-        placeholder="+91XXXXXXXXXX"
-        value="<?= htmlspecialchars($settings['phone_number'] ?? '') ?>">
-</div>
+                                            <!-- Phone -->
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">Phone Number</label>
+                                                <input type="text" name="phone" class="form-control"
+                                                    placeholder="+91XXXXXXXXXX"
+                                                    value="<?= htmlspecialchars($settings['phone_number'] ?? '') ?>">
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label">Alternate Phone Number</label>
+                                                <input type="text" name="alt_phone_number" class="form-control"
+                                                    placeholder="+91XXXXXXXXXX"
+                                                    value="<?= htmlspecialchars($settings['alt_phone_number'] ?? '') ?>">
+                                            </div>
 
                                             <div class="col-12 mt-4">
                                                 <h5 class="mb-3">Social Media Links</h5>
@@ -156,14 +169,14 @@ $settings = mysqli_fetch_assoc($q);
                                                     value="<?= htmlspecialchars($settings['whatsapp'] ?? '') ?>">
                                             </div>
                                             <div class="col-12 mt-4">
-                                           
-                                            <div class="col-md-3">
-                                                <button type="submit" class="btn btn-primary w-100">
-                                                    Save Settings
-                                                </button>
-                                            </div>
 
-                                        </div>
+                                                <div class="col-md-3">
+                                                    <button type="submit" class="btn btn-primary w-100">
+                                                        Save Settings
+                                                    </button>
+                                                </div>
+
+                                            </div>
                                     </form>
                                 </div>
 

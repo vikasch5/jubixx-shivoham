@@ -19,7 +19,7 @@ $settings = mysqli_fetch_assoc($q);
 <aside class="left-sidebar sidebar-dark" id="left-sidebar">
     <div id="sidebar" class="sidebar sidebar-with-footer">
 
-        <div class="app-brand">
+        <div class="app-brand" style="background: #ffffff;">
             <a href="dashboard.php">
                 <img src="<?= '../uploads/settings/' . $settings['site_logo'] ?>" alt="Mono">
                 <!-- <span class="brand-name">FGC India</span> -->

@@ -27,7 +27,7 @@ switch ($action) {
     case 'save_blog':
         saveBlog();
         break;
-    
+
     case 'delete_blog':
         deleteBlog();
         break;
@@ -35,13 +35,17 @@ switch ($action) {
     case 'save_settings':
         saveSettings();
         break;
-    
+
     case 'save_gallery':
         saveGallery();
         break;
 
     case 'delete_gallery':
         deleteGallery();
+        break;
+
+    case 'save_contact':
+        saveContact();
         break;
 
     default:
@@ -352,7 +356,9 @@ function saveSettings()
     $twitter = trim($_POST['twitter'] ?? '');
     $whatsapp = trim($_POST['whatsapp'] ?? '');
     $address = trim($_POST['address'] ?? '');
+    $header_address = trim($_POST['header_address'] ?? '');
     $phone = trim($_POST['phone'] ?? '');
+    $alt_phone_number = trim($_POST['alt_phone_number'] ?? '');
     $email = trim($_POST['email'] ?? '');
 
 
@@ -392,13 +398,15 @@ function saveSettings()
         twitter = ?,
         whatsapp = ?,
         address = ?,
+        header_address = ?,
         phone_number = ?,
+        alt_phone_number = ?,
         email = ?
         WHERE id=1
     ";
 
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, 'ssssssssssss', $meta_title, $meta_keywords, $meta_description, $youtube, $facebook, $instagram, $linkedin, $twitter, $whatsapp,$address,$phone,$email);
+    mysqli_stmt_bind_param($stmt, 'ssssssssssssss', $meta_title, $meta_keywords, $meta_description, $youtube, $facebook, $instagram, $linkedin, $twitter, $whatsapp, $address, $header_address, $phone, $alt_phone_number, $email);
     mysqli_stmt_execute($stmt)
         ? response('success', 'Settings updated successfully')
         : response('error', 'Failed to save settings');
@@ -412,8 +420,8 @@ function saveGallery()
         response('error', 'Unauthorized');
     }
 
-    $id     = intval($_POST['id'] ?? 0);
-    $title  = trim($_POST['title'] ?? '');
+    $id = intval($_POST['id'] ?? 0);
+    $title = trim($_POST['title'] ?? '');
     $status = $_POST['status'] ?? '';
 
     if (empty($title)) {
@@ -421,7 +429,7 @@ function saveGallery()
     }
 
     // ✅ UNIVERSAL PATH (WORKS EVERYWHERE)
-    $basePath  = realpath(__DIR__ . '/../../');
+    $basePath = realpath(__DIR__ . '/../../');
     $uploadDir = $basePath . '/uploads/gallery/';
 
     // Ensure folder exists
@@ -429,7 +437,7 @@ function saveGallery()
         mkdir($uploadDir, 0777, true);
     }
 
-    $imageSql  = '';
+    $imageSql = '';
     $imageName = '';
 
     /* ================= IMAGE UPLOAD ================= */
@@ -454,7 +462,7 @@ function saveGallery()
         }
 
         // Generate unique name
-        $imageName = 'gallery_' . time() . '_' . rand(1000,9999) . '.' . $ext;
+        $imageName = 'gallery_' . time() . '_' . rand(1000, 9999) . '.' . $ext;
 
         $fullPath = $uploadDir . $imageName;
 
@@ -542,5 +550,42 @@ function deleteGallery()
         response('success', 'Gallery deleted successfully');
     } else {
         response('error', 'Record not found');
+    }
+}
+
+function saveContact()
+{
+    global $conn;
+
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
+    $message = trim($_POST['message'] ?? '');
+
+    /* ================= VALIDATION ================= */
+    if ($name === '' || $email === '' || $phone === '' || $message === '') {
+        response('error', 'All fields are required');
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        response('error', 'Invalid email address');
+    }
+
+    /* ================= INSERT ================= */
+    $sql = "INSERT INTO contact_leads (name, email, phone, message, created_at) 
+            VALUES (?, ?, ?, ?, NOW())";
+
+    $stmt = mysqli_prepare($conn, $sql);
+
+    if (!$stmt) {
+        response('error', 'Prepare failed');
+    }
+
+    mysqli_stmt_bind_param($stmt, 'ssss', $name, $email, $phone, $message);
+
+    if (mysqli_stmt_execute($stmt)) {
+        response('success', 'Thank you! We will contact you soon.');
+    } else {
+        response('error', 'Failed to save contact');
     }
 }

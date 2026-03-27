@@ -90,7 +90,7 @@ text-decoration:none;
             <div class="widget no-border sm-text-center mt-10 mb-10 m-0">
               <i class="fa fa-building-o text-theme-colored font-32 mt-5 mr-sm-0 sm-display-block pull-left flip sm-pull-none"></i>
               <a href="#" class="font-12 text-gray text-uppercase">Company Location</a>
-              <h5 class="font-13 text-black m-0"> <?= $settings['address'] ?></h5>
+              <h5 class="font-13 text-black m-0"> <?= $settings['header_address'] ?></h5>
             </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-3">
@@ -109,7 +109,7 @@ text-decoration:none;
 
         <!-- Logo -->
         <a class="menuzord-brand pull-left flip mb-15" href="index.php">
-          <img src="images/shiv-logo-removebg-preview.png" alt="">
+          <img src="<?= 'uploads/settings/' . $settings['site_logo'] ?>" alt="">
         </a>
 
         <!-- Mobile Appointment Button -->
@@ -132,6 +132,7 @@ text-decoration:none;
             </ul>
           </li>
 
+          <li><a href="gallery.php">Gallery</a></li>
           <li><a href="contact.php">Contact Us</a></li>
           <li><a href="blog.php">Blog</a></li>
         </ul>
