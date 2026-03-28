@@ -3,17 +3,21 @@ if (!isset($_SESSION['admin_id'])) {
   header('Location: login.php');
   exit();
 }
-
+include 'inc/config.php';
+$q = mysqli_query($conn, "SELECT * FROM settings WHERE id = 1");
+$settings = mysqli_fetch_assoc($q);
 ?>
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Admin Panel - Fgc India</title>
+  <title>Admin Panel - Shivoham</title>
 
   <!-- theme meta -->
-  <meta name="theme-name" content="mono" />
+  <meta name="theme-name" content="Shivoham" />
+  <link rel="icon" href="../uploads/settings/<?= $settings['favicon'] ?>">
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
@@ -64,7 +68,7 @@ if (!isset($_SESSION['admin_id'])) {
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
   <script src="plugins/nprogress/nprogress.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
 </head>

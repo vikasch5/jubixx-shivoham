@@ -1,9 +1,12 @@
 <?php
 session_start();
-if(isset($_SESSION['admin_id'])) {
+if (isset($_SESSION['admin_id'])) {
     header('Location: dashboard.php');
     exit();
 }
+include 'inc/config.php';
+$q = mysqli_query($conn, "SELECT * FROM settings WHERE id = 1");
+$settings = mysqli_fetch_assoc($q);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +23,8 @@ if(isset($_SESSION['admin_id'])) {
     <!-- Icons & CSS -->
     <link href="plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
-    <link href="images/favicon.png" rel="shortcut icon" />
+    <link rel="icon" href="../uploads/settings/<?= $settings['favicon'] ?>">
+
 
     <!-- Modern Custom CSS -->
     <style>
@@ -102,7 +106,7 @@ if(isset($_SESSION['admin_id'])) {
                 <div class="card-body px-5 py-5">
 
                     <div class="text-center mb-4">
-                        <img src="images/logo.png" width="60" class="mb-2">
+                        <img src="<?= '../uploads/settings/' . $settings['site_logo'] ?>" width="150" class="mb-2">
                         <h4 class="brand">ADMIN PANEL</h4>
                         <small class="text-muted">Sign in to continue</small>
                     </div>
@@ -114,13 +118,11 @@ if(isset($_SESSION['admin_id'])) {
                     <form id="loginForm" autocomplete="off">
 
                         <div class="form-group mb-4">
-                            <input type="email" id="email" class="form-control"
-                                placeholder="Email address">
+                            <input type="email" id="email" class="form-control" placeholder="Email address">
                         </div>
 
                         <div class="form-group mb-4">
-                            <input type="password" id="password" class="form-control"
-                                placeholder="Password">
+                            <input type="password" id="password" class="form-control" placeholder="Password">
                         </div>
 
                         <button type="submit" id="loginBtn" class="btn btn-login btn-block text-white">

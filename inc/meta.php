@@ -8,9 +8,6 @@ $settings = mysqli_fetch_assoc($q);
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <!-- Favicon and Touch Icons -->
 <link rel="icon" href="uploads/settings/<?= $settings['favicon'] ?>">
-<!-- <title><?= $settings['meta_title'] ?></title>
-<meta name="keywords" content="<?= $settings['meta_keywords'] ?>">
-<meta name="description" content="<?= $settings['meta_description'] ?>"> -->
 <meta name="author" content="Fgc India" />
 <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
 <link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
