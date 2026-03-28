@@ -2,7 +2,7 @@
 <footer class="footer mt-auto">
     <div class="copyright bg-white">
         <p>
-            &copy; <span id="copy-year"></span> Copyright Fgc India
+            &copy; <span id="copy-year"></span> Copyright Shivoham
         </p>
     </div>
     <script>

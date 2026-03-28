@@ -5,10 +5,10 @@ $q = mysqli_query($conn, "SELECT * FROM settings WHERE id = 1");
 $settings = mysqli_fetch_assoc($q);
 
 ?>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <!-- Favicon and Touch Icons -->
 <link rel="icon" href="uploads/settings/<?= $settings['favicon'] ?>">
-<meta name="author" content="Fgc India" />
+<meta name="author" content="Shivoham" />
 <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
 <link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
 <link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
@@ -18,10 +18,10 @@ $settings = mysqli_fetch_assoc($q);
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
 <link href="css/animate.css" rel="stylesheet" type="text/css">
-<link href="css/css-plugin-collections.css" rel="stylesheet"/>
+<link href="css/css-plugin-collections.css" rel="stylesheet" />
 <!-- CSS | menuzord megamenu skins -->
-<link href="css/menuzord-megamenu.css" rel="stylesheet"/>
-<link id="menuzord-menu-skins" href="css/menuzord-skins/menuzord-bottom-trace.css" rel="stylesheet"/>
+<link href="css/menuzord-megamenu.css" rel="stylesheet" />
+<link id="menuzord-menu-skins" href="css/menuzord-skins/menuzord-bottom-trace.css" rel="stylesheet" />
 <!-- CSS | Main style file -->
 <meta name="author" content="Shivoham Siv" />
 <link href="css/style-main.css" rel="stylesheet" type="text/css">
@@ -35,9 +35,9 @@ $settings = mysqli_fetch_assoc($q);
 <!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->
 
 <!-- Revolution Slider 5.x CSS settings -->
-<link  href="js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css"/>
-<link  href="js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css"/>
-<link  href="js/revolution-slider/css/navigation.css" rel="stylesheet" type="text/css"/>
+<link href="js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css" />
+<link href="js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css" />
+<link href="js/revolution-slider/css/navigation.css" rel="stylesheet" type="text/css" />
 
 <!-- CSS | Theme Color -->
 <link href="css/colors/theme-skin-color-set2.css" rel="stylesheet" type="text/css">
