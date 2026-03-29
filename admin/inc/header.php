@@ -16,16 +16,20 @@
                 <!-- User Account -->
                 <li class="dropdown user-menu">
                     <button class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <img src="images/user/user-xs-01.jpg" class="user-image rounded-circle" alt="User Image" />
+
+                        <img src="<?= !empty($_SESSION['image'])
+                            ? '../uploads/admin/' . $_SESSION['image']
+                            : '../assets/images/user-default.png'; ?>" class="user-image rounded-circle"
+                            alt="User Image" />
                         <span class="d-none d-lg-inline-block"><?php echo $_SESSION['admin_name'] ?? 'Admin'; ?></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <!-- <li>
-                            <a class="dropdown-link-item" href="#">
+                        <li>
+                            <a class="dropdown-link-item" href="profile.php">
                                 <i class="mdi mdi-settings"></i>
                                 <span class="nav-text">Profile</span>
                             </a>
-                        </li> -->
+                        </li>
                         <li>
                             <a class="dropdown-link-item" href="logout.php">
                                 <i class="mdi mdi-logout"></i>

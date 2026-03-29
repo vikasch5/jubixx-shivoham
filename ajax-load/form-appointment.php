@@ -8,7 +8,8 @@
           <!-- <p class="lead"></p> -->
           <!-- Appointment Form -->
           <form id="popup_appointment_form" name="popup_appointment_form" class="" method="post"
-            action="https://html.kodesolution.com/2017/health-yoga-html/demo/ajax-load/includes/appointment.php">
+            action="admin/action/api.php">
+            <input type="hidden" name="action" value="save_appointment" />
             <div class="row">
               <div class="col-sm-12">
                 <div class="form-group mb-10">
@@ -24,7 +25,7 @@
               </div>
               <div class="col-sm-12">
                 <div class="form-group mb-10">
-                  <input name="form_appontment_date"  class="form-control required datetime-picker" type="text"
+                  <input name="form_appontment_date" class="form-control required datetime-picker" type="text"
                     placeholder="Appoinment Date & Time" aria-required="true">
                 </div>
               </div>

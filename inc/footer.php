@@ -308,3 +308,110 @@
 
 	});
 </script>
+  <script>
+$(document).ready(function () {
+
+    $("#popup_appointment_form").on("submit", function (e) {
+        e.preventDefault();
+
+        var form = $(this);
+        var btn = form.find("button[type='submit']");
+        var oldText = btn.html();
+
+        // REMOVE OLD ERRORS
+        form.find(".error-text").remove();
+        form.find(".form-control").removeClass("is-invalid");
+        $("#form-result").remove();
+
+        // GET VALUES
+        var name = $("input[name='form_name']").val().trim();
+        var email = $("input[name='form_email']").val().trim();
+        var date = $("input[name='form_appontment_date']").val().trim();
+        var message = $("#form_message").val().trim();
+
+        var hasError = false;
+
+        // VALIDATION
+        if (name === "") {
+            showError("form_name", "Name is required");
+            hasError = true;
+        }
+
+        if (email === "") {
+            showError("form_email", "Email is required");
+            hasError = true;
+        } else if (!validateEmail(email)) {
+            showError("form_email", "Invalid email");
+            hasError = true;
+        }
+
+        if (date === "") {
+            showError("form_appontment_date", "Select date & time");
+            hasError = true;
+        }
+
+        if (message === "") {
+            showError("form_message", "Message is required");
+            hasError = true;
+        }
+
+        if (hasError) return;
+
+        // BUTTON LOADING
+        btn.prop("disabled", true).html("Please wait...");
+
+        // AJAX
+        $.ajax({
+            url: "admin/action/api.php", // change if needed
+            type: "POST",
+            data: form.serialize(),
+            dataType: "json",
+            success: function (res) {
+
+                form.prepend('<div id="form-result" class="alert"></div>');
+
+                if (res.status === "success") {
+                    $("#form-result")
+                        .addClass("alert-success")
+                        .html(res.message);
+
+                    form[0].reset();
+                } else {
+                    $("#form-result")
+                        .addClass("alert-danger")
+                        .html(res.message);
+                }
+
+                btn.prop("disabled", false).html(oldText);
+
+                setTimeout(function () {
+                    $("#form-result").fadeOut();
+                }, 4000);
+            },
+            error: function () {
+                btn.prop("disabled", false).html(oldText);
+                form.prepend('<div id="form-result" class="alert alert-danger">Server error</div>');
+            }
+        });
+
+        // SHOW ERROR FUNCTION
+        function showError(field, message) {
+            var input = $("[name='" + field + "']");
+            input.addClass("is-invalid");
+            input.after('<small class="error-text text-danger">' + message + '</small>');
+        }
+
+        // EMAIL VALIDATION
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+    });
+
+    // REMOVE ERROR ON TYPING
+    $(".form-control").on("input", function () {
+        $(this).removeClass("is-invalid");
+        $(this).next(".error-text").remove();
+    });
+
+});
+</script>

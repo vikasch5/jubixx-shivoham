@@ -44,7 +44,7 @@
           </div>
           <div class="col-xs-12 col-sm-12 col-md-3">
             <div class="widget no-border text-right flip sm-text-center mb-10 m-0">
-              <a class="btn btn-colored btn-flat btn-theme-colored mt-15 pt-10 pb-10 ajaxload-popup" href="ajax-load/form-appointment.html">Request an appointment</a>
+              <a class="btn btn-colored btn-flat btn-theme-colored mt-15 pt-10 pb-10 ajaxload-popup" href="ajax-load/form-appointment.php">Request an appointment</a>
             </div>
           </div>
         </div>

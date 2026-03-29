@@ -48,6 +48,13 @@ switch ($action) {
         saveContact();
         break;
 
+    case 'save_appointment':
+        saveAppointment();
+        break;
+
+    case 'update_profile':
+        updateProfile();
+        break;
     default:
         response('error', 'Invalid API action');
 }
@@ -71,7 +78,7 @@ function adminLogin()
         response('error', 'Invalid email address');
     }
 
-    $sql = "SELECT id, name, password 
+    $sql = "SELECT id, name, password, image 
             FROM admin 
             WHERE email = ? AND status = 1 
             LIMIT 1";
@@ -89,6 +96,7 @@ function adminLogin()
 
             $_SESSION['admin_id'] = $row['id'];
             $_SESSION['admin_name'] = $row['name'];
+            $_SESSION['image'] = $row['image'] ?? null;
 
             response('success', 'Login successful');
         }
@@ -588,4 +596,116 @@ function saveContact()
     } else {
         response('error', 'Failed to save contact');
     }
+}
+
+function saveAppointment()
+{
+    global $conn;
+
+    $name = trim($_POST['form_name'] ?? '');
+    $email = trim($_POST['form_email'] ?? '');
+    $date = trim($_POST['form_appontment_date'] ?? '');
+    $message = trim($_POST['form_message'] ?? '');
+
+    /* ================= VALIDATION ================= */
+    if ($name === '' || $email === '' || $date === '' || $message === '') {
+        response('error', 'All fields are required');
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        response('error', 'Invalid email address');
+    }
+
+    /* ================= INSERT ================= */
+    $sql = "INSERT INTO appointments 
+            (name, email, appointment_datetime, message, created_at) 
+            VALUES (?, ?, ?, ?, NOW())";
+
+    $stmt = mysqli_prepare($conn, $sql);
+
+    if (!$stmt) {
+        response('error', 'Prepare failed');
+    }
+
+    mysqli_stmt_bind_param($stmt, 'ssss', $name, $email, $date, $message);
+
+    if (mysqli_stmt_execute($stmt)) {
+        response('success', 'Appointment booked successfully!');
+    } else {
+        response('error', 'Failed to save appointment');
+    }
+}
+
+function updateProfile()
+{
+    global $conn;
+
+    if (!isset($_SESSION['admin_id'])) {
+        response('error', 'Unauthorized');
+    }
+
+    $admin_id = $_SESSION['admin_id'];
+    $password = trim($_POST['password'] ?? '');
+    $confirm = trim($_POST['confirm_password'] ?? '');
+
+    /* ================= PASSWORD UPDATE ================= */
+    if (!empty($password)) {
+
+        if ($password !== $confirm) {
+            response('error', 'Password does not match');
+        }
+
+        if (strlen($password) < 6) {
+            response('error', 'Password must be at least 6 characters');
+        }
+
+        $hashed = password_hash($password, PASSWORD_DEFAULT);
+
+        $stmt = mysqli_prepare($conn, "UPDATE admin SET password=? WHERE id=?");
+        mysqli_stmt_bind_param($stmt, 'si', $hashed, $admin_id);
+        mysqli_stmt_execute($stmt);
+    }
+
+    /* ================= IMAGE UPLOAD ================= */
+    if (!empty($_FILES['image']['name'])) {
+
+        $allowed = ['jpg', 'jpeg', 'png', 'webp'];
+        $ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+
+        if (!in_array($ext, $allowed)) {
+            response('error', 'Invalid image format');
+        }
+
+        // path (same style like gallery)
+        $uploadDir = realpath(__DIR__ . '/../../') . '/uploads/admin/';
+
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        // delete old image
+        $old = mysqli_fetch_assoc(mysqli_query($conn, "SELECT image FROM admin WHERE id=$admin_id"));
+
+        if (!empty($old['image'])) {
+            $oldPath = $uploadDir . $old['image'];
+            if (file_exists($oldPath)) {
+                unlink($oldPath);
+            }
+        }
+
+        $imageName = 'admin_' . time() . '.' . $ext;
+        $fullPath = $uploadDir . $imageName;
+
+        if (!move_uploaded_file($_FILES['image']['tmp_name'], $fullPath)) {
+            response('error', 'Image upload failed');
+        }
+
+        $stmt = mysqli_prepare($conn, "UPDATE admin SET image=? WHERE id=?");
+        mysqli_stmt_bind_param($stmt, 'si', $imageName, $admin_id);
+        mysqli_stmt_execute($stmt);
+    }
+
+    $_SESSION['image'] = $imageName;
+
+    response('success', 'Profile updated successfully');
 }

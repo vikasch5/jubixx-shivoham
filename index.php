@@ -7,14 +7,15 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 <meta name="description" content="Yoga | Health Beauty & Yoga Responsive HTML5 Template" />
 <meta name="keywords" content="care, clinic, corporate, dental, dentist, doctor" /> -->
-<title><?= $settings['meta_title'] ?></title>
-<meta name="keywords" content="<?= $settings['meta_keywords'] ?>">
-<meta name="description" content="<?= $settings['meta_description'] ?>">
+
 
 <!-- Page Title -->
 <title>Shivoham Shiv</title>
 
 <?php include ('inc/meta.php')?>
+<title><?= $settings['meta_title'] ?></title>
+<meta name="keywords" content="<?= $settings['meta_keywords'] ?>">
+<meta name="description" content="<?= $settings['meta_description'] ?>"></style>
 </head>
 <style>
 .stars{

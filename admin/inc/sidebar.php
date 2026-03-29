@@ -69,6 +69,12 @@ $settings = mysqli_fetch_assoc($q);
                         <span class="nav-text">Contact Us Leads</span>
                     </a>
                 </li>
+                <li class="<?= in_array($currentPage, ['appointments.php']) ? 'active' : '' ?>">
+                    <a class="sidenav-item-link" href="appointments.php">
+                        <i class="mdi mdi-calendar-check"></i>
+                        <span class="nav-text">Appointments</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
