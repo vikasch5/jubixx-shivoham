@@ -579,7 +579,11 @@ margin-right:10px;
     </section>
 
     <!--start gallary Section-->
-    
+
+    <?php
+    $galleryQuery = mysqli_query($conn, "SELECT * FROM gallery WHERE status='active' ORDER BY id DESC limit 6");
+    if(mysqli_num_rows($galleryQuery)> 0){
+    ?>
     <section>
       <div class="container-fluid pb-0">
         <div class="section-title text-center mt-0">
@@ -605,175 +609,33 @@ margin-right:10px;
               <!-- Portfolio Gallery Grid -->
               <div class="gallery-isotope default-animation-effect grid-3 gutter-small clearfix" data-lightbox="gallery">
                 <!-- Portfolio Item Start -->
+                 <?php
+                 while($galleryData = mysqli_fetch_array($galleryQuery)){
+                 ?>
                 <div class="gallery-item design">
                   <div class="thumb">
-                    <img class="img-fullwidth" src="images/spa/gallery/1.jpg" alt="project">
+                    <img class="img-fullwidth" src="uploads/gallery/<?php echo $galleryData['image']; ?>" alt="<?php echo htmlspecialchars($galleryData['title']); ?>">
                     <div class="overlay-shade"></div>
                     <div class="text-holder">
-                      <div class="title text-center">Sample Title</div>
+                      <div class="title text-center"><?php echo htmlspecialchars($galleryData['title']); ?></div>
                     </div>
                     <div class="icons-holder">
                       <div class="icons-holder-inner">
                         <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/spa/gallery/full/1.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                          <a href="uploads/gallery/<?php echo $galleryData['image']; ?>" data-lightbox-gallery="gallery" title="<?php echo htmlspecialchars($galleryData['title']); ?>"><i class="fa fa-picture-o"></i></a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <!-- Portfolio Item End -->
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item branding photography">
-                  <div class="thumb">
-                    <img class="img-fullwidth" src="images/spa/gallery/2.jpg" alt="project">
-                    <div class="overlay-shade"></div>
-                    <div class="text-holder">
-                      <div class="title text-center">Sample Title</div>
-                    </div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/spa/gallery/full/2.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item design">
-                  <div class="thumb">
-                    <img class="img-fullwidth" src="images/spa/gallery/3.jpg" alt="project">
-                    <div class="overlay-shade"></div>
-                    <div class="text-holder">
-                      <div class="title text-center">Sample Title</div>
-                    </div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/spa/gallery/full/3.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item branding">
-                  <div class="thumb">
-                    <img class="img-fullwidth" src="images/spa/gallery/4.jpg" alt="project">
-                    <div class="overlay-shade"></div>
-                    <div class="text-holder">
-                      <div class="title text-center">Sample Title</div>
-                    </div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/spa/gallery/full/4.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item design photography">
-                  <div class="thumb">
-                    <img class="img-fullwidth" src="images/spa/gallery/5.jpg" alt="project">
-                    <div class="overlay-shade"></div>
-                    <div class="text-holder">
-                      <div class="title text-center">Sample Title</div>
-                    </div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/spa/gallery/full/5.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item photography">
-                  <div class="thumb">
-                    <img class="img-fullwidth" src="images/spa/gallery/6.jpg" alt="project">
-                    <div class="overlay-shade"></div>
-                    <div class="text-holder">
-                      <div class="title text-center">Sample Title</div>
-                    </div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/spa/gallery/full/6.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item branding">
-                  <div class="thumb">
-                    <img class="img-fullwidth" src="images/spa/gallery/7.jpg" alt="project">
-                    <div class="overlay-shade"></div>
-                    <div class="text-holder">
-                      <div class="title text-center">Sample Title</div>
-                    </div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/spa/gallery/full/7.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item photography">
-                  <div class="thumb">
-                    <img class="img-fullwidth" src="images/spa/gallery/8.jpg" alt="project">
-                    <div class="overlay-shade"></div>
-                    <div class="text-holder">
-                      <div class="title text-center">Sample Title</div>
-                    </div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/spa/gallery/full/8.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
-                <!-- Portfolio Item Start -->
-                <div class="gallery-item branding">
-                  <div class="thumb">
-                    <img class="img-fullwidth" src="images/spa/gallery/9.jpg" alt="project">
-                    <div class="overlay-shade"></div>
-                    <div class="text-holder">
-                      <div class="title text-center">Sample Title</div>
-                    </div>
-                    <div class="icons-holder">
-                      <div class="icons-holder-inner">
-                        <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/spa/gallery/full/9.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Portfolio Item End -->
+                <?php } ?>
               </div>
-              <!-- End Portfolio Gallery Grid -->
             </div>
           </div>
         </div>
       </div>
     </section>
-     
+     <?php } ?>
     
 
     <!--start testimonial Section-->

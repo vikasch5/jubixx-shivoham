@@ -78,7 +78,7 @@ if ($isEdit) {
                                     <div class="col-md-6">
                                         <label>Blog Title</label>
                                         <input type="text" name="title" class="form-control required"
-                                            placeholder="Enter blog title (e.g. Galaxy S26 Ultra Review)"
+                                            placeholder="Enter blog title "
                                             value="<?= htmlspecialchars($data['title']); ?>">
                                     </div>
 
