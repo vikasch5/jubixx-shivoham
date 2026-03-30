@@ -1,3 +1,8 @@
+<?php
+  include 'config.php';
+  error_reporting(E_ALL);
+ini_set('display_errors', 1);
+?>
 <style>
 .blogs-section {
   background: #f8f9fa;
@@ -100,51 +105,35 @@
     </div>
 
     <!-- Blog Cards -->
+     <?php
+     $blogQuery = mysqli_query($conn, "SELECT * FROM blogs WHERE status='published' ORDER BY created_at DESC LIMIT 3");
+      if(mysqli_num_rows($blogQuery) > 0) {
+     ?>
     <div class="row">
 
       <!-- Blog 1 -->
+       <?php
+       
+      while($blogs = mysqli_fetch_assoc($blogQuery)) { 
+        $short_desc = substr(strip_tags($blogs['description']), 0, 150) . '...';
+        ?>
       <div class="col-md-4 col-sm-6">
         <div class="blog-card">
           <div class="blog-img">
-            <img src="images/ChatGPT-Image-Mar-6-2026-03_19_10-PM-768x512.webp" alt="">
+            <img src="uploads/blogs/<?php echo $blogs['image']; ?>" alt="<?php echo htmlspecialchars($blogs['title']); ?>">
           </div>
           <div class="blog-content">
-            <h3>Guided Meditation for Better Sleep</h3>
-            <p>With the modern pace of life, sleep is often an expense...</p>
-            <a href="blog-details.php" class="read-btn">Read More</a>
+            <h3><?php echo htmlspecialchars($blogs['title']); ?></h3>
+             <p class="mt-10">
+        <?php echo $short_desc; ?>
+      </p>
+            <a href="blog-details.php?slug=<?php echo $blogs['slug']; ?>" class="read-btn">Read More</a>
           </div>
         </div>
       </div>
-
-      <!-- Blog 2 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="blog-card">
-          <div class="blog-img">
-            <img src="images/ChatGPT-Image-Feb-13-2026-02_46_07-PM-768x512.webp" alt="">
-          </div>
-          <div class="blog-content">
-            <h3>What is a Vipassana Course?</h3>
-            <p>Stress, anxiety, and mental fatigue have become common...</p>
-            <a href="blog-details.php" class="read-btn">Read More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Blog 3 -->
-      <div class="col-md-4 col-sm-6">
-        <div class="blog-card">
-          <div class="blog-img">
-            <img src="images/ChatGPT-Image-Feb-10-2026-02_31_03-PM-768x512.webp" alt="">
-          </div>
-          <div class="blog-content">
-            <h3>Screens, Stress & School Pressure</h3>
-            <p>The childhood experience has changed drastically...</p>
-            <a href="blog-details.php" class="read-btn">Read More</a>
-          </div>
-        </div>
-      </div>
-
+      <?php } ?>
     </div>
+    <?php } ?>
 
     <!-- View All Button (BOTTOM CENTER) -->
     <div class="row view-all-wrapper">
