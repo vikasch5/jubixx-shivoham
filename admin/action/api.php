@@ -55,6 +55,14 @@ switch ($action) {
     case 'update_profile':
         updateProfile();
         break;
+    
+    case 'save_banner':
+        saveBanner();
+        break;
+
+    case 'delete_banner':
+        deleteBanner();
+        break;
     default:
         response('error', 'Invalid API action');
 }
@@ -708,4 +716,111 @@ function updateProfile()
     $_SESSION['image'] = $imageName;
 
     response('success', 'Profile updated successfully');
+}
+
+function saveBanner()
+{
+    global $conn;
+
+    if (!isset($_SESSION['admin_id'])) {
+        response('error', 'Unauthorized access');
+    }
+
+    $id = $_POST['id'] ?? null;
+    $status = ($_POST['status'] == '1') ? 1 : 0;
+
+    $uploadDir = dirname(__DIR__, 2) . '/uploads/banners/';
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0755, true);
+    }
+
+    // IMAGE UPLOAD (OPTIONAL FOR EDIT)
+    $imageSql = '';
+    $imageName = null;
+
+    if (!empty($_FILES['image']['name'])) {
+
+        $ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+        if (!in_array($ext, ['jpg', 'jpeg', 'png', 'webp'])) {
+            response('error', 'Invalid image type');
+        }
+
+        $imageName = time() . '_' . uniqid() . '.' . $ext;
+        if (!move_uploaded_file($_FILES['image']['tmp_name'], $uploadDir . $imageName)) {
+            response('error', 'Image upload failed');
+        }
+
+        $imageSql = ', image=?';
+    }
+
+    /* ================= INSERT ================= */
+    if (empty($id)) {
+
+        if (!$imageName)
+            response('error', 'Banner image required');
+
+        $stmt = mysqli_prepare(
+            $conn,
+            "INSERT INTO banners (image,status) VALUES (?,?)"
+        );
+        mysqli_stmt_bind_param($stmt, 'si', $imageName, $status);
+
+        mysqli_stmt_execute($stmt)
+            ? response('success', 'Banner added')
+            : response('error', 'Insert failed');
+    }
+
+    /* ================= UPDATE ================= */
+    $sql = "UPDATE banners SET status=? $imageSql WHERE id=?";
+    $stmt = mysqli_prepare($conn, $sql);
+
+    if ($imageSql) {
+        mysqli_stmt_bind_param($stmt, 'isi', $status, $imageName, $id);
+    } else {
+        mysqli_stmt_bind_param($stmt, 'ii', $status, $id);
+    }
+
+    mysqli_stmt_execute($stmt)
+        ? response('success', 'Banner updated')
+        : response('error', 'Update failed');
+}
+
+function deleteBanner()
+{
+    global $conn;
+
+    if (!isset($_SESSION['admin_id'])) {
+        response('error', 'Unauthorized access');
+    }
+
+    $id = intval($_POST['id'] ?? 0);
+    if ($id <= 0) {
+        response('error', 'Invalid banner ID');
+    }
+
+    // Fetch banner image
+    $stmt = mysqli_prepare($conn, "SELECT image FROM banners WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, 'i', $id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if (!$row = mysqli_fetch_assoc($result)) {
+        response('error', 'Banner not found');
+    }
+
+    // Delete image file
+    $imagePath = dirname(__DIR__, 2) . '/uploads/banners/' . $row['image'];
+    if (file_exists($imagePath)) {
+        unlink($imagePath);
+    }
+
+    // Delete database record
+    $stmt = mysqli_prepare($conn, "DELETE FROM banners WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, 'i', $id);
+
+    if (mysqli_stmt_execute($stmt)) {
+        response('success', 'Banner deleted successfully');
+    }
+
+    response('error', 'Failed to delete banner');
 }

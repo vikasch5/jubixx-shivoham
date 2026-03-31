@@ -44,6 +44,12 @@ $settings = mysqli_fetch_assoc($q);
                         <span class="nav-text">Blogs</span>
                     </a>
                 </li>
+                 <li class="<?= in_array($currentPage, ['banners.php']) ? 'active' : '' ?>">
+                    <a class="sidenav-item-link" href="banners.php">
+                        <i class="mdi mdi-image"></i>
+                        <span class="nav-text">Banner</span>
+                    </a>
+                </li>
 
                 <!-- Gallery -->
                 <li
